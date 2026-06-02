@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,6 +74,31 @@
       --shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
     }
 
+    body.light {
+      --bg: #f8fafc;
+      --sf: #ffffff;
+      --s2: #f1f5f9;
+      --s3: #e2e8f0;
+      --s4: #cbd5e1;
+      --b: #cbd5e1;
+      --b2: #94a3b8;
+      --ink: #0f172a;
+      --t2: #334155;
+      --t3: #64748b;
+      background: radial-gradient(circle at 20% 0%, rgba(109, 40, 217, 0.08), transparent 32%),
+                  radial-gradient(circle at 90% 12%, rgba(29, 78, 216, 0.06), transparent 28%),
+                  var(--bg);
+    }
+
+    body.light .topbar { background: rgba(255, 255, 255, 0.96); }
+    body.light .sidebar { background: rgba(248, 250, 252, 0.94); }
+    body.light .hero { background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(241,245,249,0.72)); }
+    body.light .hero::before { background: radial-gradient(circle, rgba(109, 40, 217, 0.09), transparent 70%); }
+    body.light .card { background: rgba(255, 255, 255, 0.84); }
+    body.light details.module { background: rgba(255, 255, 255, 0.82); }
+    body.light .input-area { background: rgba(255, 255, 255, 0.96); }
+    body.light .send { color: #fff; background: linear-gradient(135deg, var(--blue), var(--violet)); }
+
     * {
       box-sizing: border-box;
     }
@@ -123,7 +147,7 @@
     .shell {
       height: 100vh;
       display: grid;
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 310px 1fr;
       grid-template-rows: 62px 1fr 150px;
       overflow: hidden;
     }
@@ -934,6 +958,8 @@
       <button class="nav-item" data-scroll="games"><span class="nav-icon">🎮</span>Game Integration</button>
 
       <div class="nav-title">Transcendent Domains</div>
+      <button class="nav-item" data-scroll="gemini-class"><span class="nav-icon">✨</span>Gemini Exclusives</button>
+      <button class="nav-item" data-scroll="industry-frontiers"><span class="nav-icon">🚀</span>Industry Frontiers</button>
       <button class="nav-item" data-scroll="cognition"><span class="nav-icon">🧠</span>Core Cognition</button>
       <button class="nav-item" data-scroll="execution"><span class="nav-icon">⚡</span>Autonomy & Execution</button>
       <button class="nav-item" data-scroll="humanization"><span class="nav-icon">🎭</span>Humanization</button>
@@ -1066,7 +1092,8 @@
       ["QEP Active", "violet"],
       ["Live-Sync", "blue"],
       ["AI-Sync", "blue"],
-      ["Common Sense", "green"],
+      ["Native Compute", "blue"],
+      ["Swarm Net", "cyan"],
       ["Fact-Check Live", "amber"],
       ["Dynamic Updating", "cyan"],
       ["Causal Reasoning", "violet"],
@@ -1088,6 +1115,33 @@
     ];
 
     const modules = [
+      {
+        id: "gemini-class",
+        icon: "✨",
+        title: "Gemini-Class Exclusives",
+        color: "blue",
+        intro: "Features natively powered by Google Gemini architecture that expand upon the base Nexus framework.",
+        features: [
+          ["Native Mass Multimodality", "Ingests hour-long videos, massive audio streams, and hundreds of PDFs simultaneously without discrete conversion pipelines."],
+          ["Implicit Code Sandboxing", "Automatically writes and executes Python in a secure background container to deterministically process data and solve complex logic."],
+          ["Google Ecosystem Orchestration", "Deeply embedded into Workspace, Drive, Maps, and YouTube without requiring fragile third-party abstracted APIs."]
+        ],
+        tags: ["Native Multimodal", "Code Sandbox", "Ecosystem Integration"]
+      },
+      {
+        id: "industry-frontiers",
+        icon: "🚀",
+        title: "Industry AI Frontiers",
+        color: "cyan",
+        intro: "Advanced capabilities pioneered across the broader AI ecosystem (such as OpenAI, Anthropic, or specialized researchers).",
+        features: [
+          ["Real-Time Interruptible Voice", "Ultra-low latency conversational AI that responds to emotive tones and can be interrupted mid-sentence organically."],
+          ["Generative Physics-Aware Video", "Synthesizes multi-minute, hyper-realistic, structurally consistent video sequences directly from text prompts."],
+          ["Swarm Persona Orchestration", "Spawns specialized 'expert' personas that autonomously collaborate, debate, and verify each other before delivering a final result."],
+          ["Native Spatial Synthesis", "Generates 3D meshes and Neural Radiance Fields (NeRFs) designed for instant projection inside spatial computing headsets."]
+        ],
+        tags: ["True Voice", "Video Gen", "Agent Swarms", "Spatial 3D"]
+      },
       {
         id: "cognition",
         icon: "🧠",
@@ -1173,12 +1227,11 @@
           ["Infinite Context Windows", "Processes books, codebases, video transcripts, and long histories without losing early details."],
           ["Edge AI Execution", "Runs compact models locally on phones, laptops, and private devices where possible."],
           ["Massive Efficiency Gains", "Optimizes compute, electricity, water usage, and latency."],
-          ["Multimodal Synthesis", "Combines text, audio, images, video, spatial data, game-state data, and sensor data."],
           ["Data-Efficient Training", "Learns complex tasks from small sets of high-quality examples."],
           ["Lifecycle Scraping Cleanup", "Removes outdated, redundant, or disproven data from indexed stores."],
           ["Hardware-Agnostic Compiling", "Optimizes code paths for different chip brands and architectures."]
         ],
-        tags: ["Infinite Context", "Edge", "Multimodal", "Efficient", "Hardware-Agnostic"]
+        tags: ["Infinite Context", "Edge", "Efficient", "Hardware-Agnostic"]
       },
       {
         id: "specialized",
@@ -1640,4 +1693,3 @@
   </script>
 </body>
 </html>
-```
